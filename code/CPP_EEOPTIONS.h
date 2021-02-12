@@ -1,6 +1,3 @@
-C $Header: /u/gcmpack/MITgcm_contrib/gael/verification/global_oce_llc90/code/CPP_EEOPTIONS.h_mpi,v 1.1 2012/09/05 14:40:53 gforget Exp $
-C $Name:  $
-
 CBOP
 C     !ROUTINE: CPP_EEOPTIONS.h
 C     !INTERFACE:
