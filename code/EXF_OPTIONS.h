@@ -1,6 +1,3 @@
-C $Header: /u/gcmpack/MITgcm_contrib/gael/verification/global_oce_llc90/code/EXF_OPTIONS.h,v 1.2 2014/10/20 03:29:00 gforget Exp $
-C $Name:  $
-
 CBOP
 C !ROUTINE: EXF_OPTIONS.h
 C !INTERFACE:
@@ -148,6 +145,10 @@ C   Bulk formulae related flags.
 #define  ALLOW_ATM_WIND
 #define  ALLOW_DOWNWARD_RADIATION
 #define  ALLOW_RUNOFF
+C-DJ
+#undef  ALLOW_RUNOFTEMP
+#undef  ALLOW_SALTFLX
+C-DJ
 #if (defined (ALLOW_ATM_TEMP) || defined (ALLOW_ATM_WIND))
 # define ALLOW_BULKFORMULAE
 # define ALLOW_BULK_LARGEYEAGER04
