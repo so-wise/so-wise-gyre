@@ -171,10 +171,10 @@ c# undef SEAICE_SIMPLIFY_GROWTH_ADJ
 C--   go through heff and open ocean
 c#define SEAICE_MODIFY_GROWTH_ADJ
 
-CMM(
-#define DISABLE_SEAICE_OBCS
-#undef SEAICE_ALLOW_JFNK
-CMM)
+CDJ(
+C#define DISABLE_SEAICE_OBCS
+C#undef SEAICE_ALLOW_JFNK
+CDJ)
 
 #endif /* ALLOW_SEAICE */
 #endif /* SEAICE_OPTIONS_H */
