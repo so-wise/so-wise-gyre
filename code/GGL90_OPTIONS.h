@@ -6,6 +6,11 @@ C     | Use this file for selecting options within the GGL90
 C     | package.
 C     *=============================================================*
 
+C -- DJ
+C These options should work for dz=5-10m in the surface layers. 
+C But for finer surface layers, we may need to revisit this. 
+C -- DJ
+
 #ifndef GGL90_OPTIONS_H
 #define GGL90_OPTIONS_H
 #include "PACKAGES_CONFIG.h"

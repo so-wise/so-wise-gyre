@@ -36,6 +36,10 @@ C Include hooks to sponge layer treatment of pkg/seaice variables
 C balance barotropic velocity
 #undef ALLOW_OBCS_BALANCE
 
+C -- DJ
+C  The five experimental options below are turned off at present. 
+C -- DJ
+
 C     The following five CPP options are experimental and aim to deal
 C     with artifacts due to the low-frequency specification of sea-ice
 C     boundary conditions compared to the model forcing frequency.
