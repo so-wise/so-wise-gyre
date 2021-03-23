@@ -22,6 +22,10 @@ C Note: this should be a run-time option
 #define SHORTWAVE_HEATING
 
 C o Include/exclude Geothermal Heat Flux at the bottom of the ocean
+C --DJ 
+C This is a minor contributor to the heat flux, but we may add later.
+C Note: it is included in ECCOv4-r4
+C --DJ
 #undef ALLOW_GEOTHERMAL_FLUX
 
 C o Include/exclude phi_hyd calculation code
@@ -34,6 +38,7 @@ C o Include/exclude call to S/R CALC_DIFFUSIVITY
 #define INCLUDE_CALC_DIFFUSIVITY_CALL
 
 C o Allow full 3D specification of vertical diffusivity
+C --DJ : This is used in ECCOv4
 #define ALLOW_3D_DIFFKR
 
 C o Allow latitudinally varying BryanLewis79 vertical diffusivity
@@ -43,6 +48,10 @@ C o Include/exclude Implicit vertical advection code
 #define INCLUDE_IMPLVERTADV_CODE
 
 C o Include/exclude AdamsBashforth-3rd-Order code
+C --DJ
+C May be useful if forcing is very high temporal frequency, 
+C but we can leave it "undefined" for now
+C --DJ
 #undef ALLOW_ADAMSBASHFORTH_3
 
 C o Include/exclude nonHydrostatic code

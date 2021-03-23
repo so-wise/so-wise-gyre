@@ -30,6 +30,9 @@ C   ==================================================================
 C-- Package-specific Options & Macros go here
 
 C o I/O and pack settings
+C --DJ
+C  Pack/unpack control can be useful if the controls are large in memory
+C --DJ
 #define CTRL_SET_PREC_32
 #undef ALLOW_NONDIMENSIONAL_CONTROL_IO
 #define ALLOW_PACKUNPACK_METHOD2
@@ -42,6 +45,9 @@ C o sets of controls
 #define ALLOW_GENARR2D_CONTROL
 #define ALLOW_GENARR3D_CONTROL
 
+C -- DJ
+C The smoothers below aren't used in SOSE. (Results smoothed out too much)
+C -- DJ
 C  o use pkg/smooth correlation operator (incl. smoother) for 3D controls (Weaver, Courtier 01)
 C    This CPP option just sets the default for ctrlSmoothCorrel23 to .TRUE.
 #undef ALLOW_SMOOTH_CORREL3D
@@ -49,6 +55,10 @@ C  o use pkg/smooth correlation operator (incl. smoother) for 2D controls (Weave
 C    This CPP option just sets the default for ctrlSmoothCorrel2D to .TRUE.
 #undef ALLOW_SMOOTH_CORREL2D
 
+C -- DJ
+C  SOSE approach is to examine the controls, as opposed to artificially limiting them. 
+C  Look for growth in the controls, to see where problems may be appearing.
+C -- DJ
 C  o impose bounds on controls
 #undef ALLOW_ADCTRLBOUND
 

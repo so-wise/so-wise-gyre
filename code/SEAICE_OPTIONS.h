@@ -95,7 +95,6 @@ C     enable JFNK code by defining the following flag
 C     enable LSR to use global (multi-tile) tri-diagonal solver
 # undef SEAICE_GLOBAL_3DIAG_SOLVER
 C     enable EVP code by defining the following flag
-CMM # define SEAICE_ALLOW_EVP
 #undef SEAICE_ALLOW_EVP
 # ifdef SEAICE_ALLOW_EVP
 C--   When set use SEAICE_zetaMin and SEAICE_evpDampC to limit viscosities
