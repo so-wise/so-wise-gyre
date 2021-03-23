@@ -1,7 +1,7 @@
 # Packages
  &PACKAGES
 #
- useEXF         = .TRUE.,
+ useEXF         = .FALSE.,
  useCAL         = .TRUE.,
  usePTRACERS    = .FALSE.,
  useGMRedi      = .FALSE.,
@@ -10,13 +10,12 @@
  useECCO        = .TRUE.,
 #
  useCTRL        = .TRUE.,
- useOBCS        = .TRUE.,
+ useOBCS        = .FALSE.,
  useDiagnostics = .FALSE.,
- useSeaice      = .TRUE.,
- useShelfIce    = .TRUE.,
+ useSeaice      = .FALSE.,
+ useShelfIce    = .FALSE.,
 #useFrazil      = .FALSE.,
  usePROFILES    = .FALSE.,
- useSMOOTH      = .TRUE.,
- usePTRACERS    = .FALSE.,
+ useSMOOTH      = .FALSE.,
  /
   
