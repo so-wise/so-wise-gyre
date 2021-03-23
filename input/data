@@ -67,7 +67,7 @@
 #DJ)
  globalfiles=.FALSE.,
  rotationPeriod=86164.,
- debugLevel=1,
+ debugLevel=5,
  /
 
 # Elliptic solver parameters

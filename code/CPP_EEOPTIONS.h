@@ -144,9 +144,12 @@ C--   Control use of communication with other component:
 C     allow to import and export from/to Coupler interface.
 #undef COMPONENT_MODULE
 
+C--DJ 
+C I'm not sure why SINGLE_DISK_IO was turned on. 
+C--DJ
 CMM(
 CMM #define TARGET_CRAYXT
-#define SINGLE_DISK_IO
+C#define SINGLE_DISK_IO
 CMM)
 
 #endif /* _CPP_EEOPTIONS_H_ */
