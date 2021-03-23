@@ -42,7 +42,8 @@ C o use divided adjoint to split adjoint computations
 #undef ALLOW_DIVIDED_ADJOINT
 #undef ALLOW_DIVIDED_ADJOINT_MPI
 
-C o tape settings
+C o tape settings 
+C -- These settings optimized by G. Forget
 #define ALLOW_AUTODIFF_WHTAPEIO
 #define AUTODIFF_USE_OLDSTORE_2D
 #define AUTODIFF_USE_OLDSTORE_3D
