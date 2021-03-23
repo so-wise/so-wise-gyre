@@ -48,7 +48,7 @@ CEOP
      &           OLy =   4,
      &           nSx =   2,
      &           nSy =   2,
-     &           nPx =  23,
+     &           nPx =  35,
      &           nPy =  31,
      &           Nx  = sNx*nSx*nPx,
      &           Ny  = sNy*nSy*nPy,
