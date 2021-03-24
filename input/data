@@ -102,10 +102,12 @@
 #epsAB_CD = 0.25,
 #when using ab2:
 #abEps = 0.1,
-#when using ab3:
- doAB_onGtGs=.FALSE.,
- alph_AB=0.5,
- beta_AB=0.281105,
+#--
+#when using ab3 (deactivated for now):
+#--
+#doAB_onGtGs=.FALSE.,
+#alph_AB=0.5,
+#beta_AB=0.281105,
 #
  periodicExternalForcing=.TRUE.,
  externForcingPeriod=2629800.,
@@ -120,7 +122,7 @@
  xgOrigin= 275.,
  ygOrigin= -84.2,
  dxSpacing= 0.25,
- delYfile= 'delY'
+ delYfile= 'delY_be'
  delRfile= 'delR'
  /
 
