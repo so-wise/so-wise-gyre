@@ -122,7 +122,7 @@
  xgOrigin= 275.,
  ygOrigin= -84.2,
  dxSpacing= 0.25,
- delYfile= 'delY_be'
+ delYfile= 'delY'
  delRfile= 'delR'
  /
 
