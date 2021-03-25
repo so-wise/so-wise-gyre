@@ -54,8 +54,8 @@
 #CMM)
  useNHMTerms=.FALSE.,
 # turn on lopped cells
- hFacMin=0.3,
- hFacMindz=50.,
+ hFacMin=0.1,
+ hFacMindz=20.,
 # Set precision of data files
 # If EXF is on, this does not apply to forcing or boundary condition files!
 # See data.exf, with variables exf_iprec and exf_iprec_obcs (both default 32)
