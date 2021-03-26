@@ -30,7 +30,7 @@ load('~/Documents/MATLAB/colormaps/cividis.txt')
 
 % NaN for land points
 bathy(omask==0) = NaN;
-draft(draft==0) = NaN;
+%draft(draft==0) = NaN;
 
 %% Make some plots
 
@@ -66,6 +66,7 @@ colorbar
 xlabel('Longitude','fontsize',20)
 ylabel('Latitude','fontsize',20)
 title('Ice draft [m]','fontsize',22);
-colormap(flipud(cividis))
+%colormap(flipud(cividis))
+colormap(bone)
 set(gca,'fontsize',20,'ylim',[-85 -65])
-saveas(gcf,'topo_outputs/draft.png','png')
+%saveas(gcf,'topo_outputs/draft.png','png')
