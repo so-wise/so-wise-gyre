@@ -206,7 +206,8 @@ In order to get the grid files, I had to turn most of the packages off. Of cours
 As a start, I will use SOSE initial conditions. For now, let's stick with Kaitlin's procedure of initialising from the SOSE climatology. We obviously might want to initialize from something more specific in the future, but this is a good first step. I've run this command:
 
 ```
-sose_ics(grid_path='grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='sose_ics.nc', output_dir='.', constant_t=-1.9, constant_s=34.4, split=180)
+from mitgcm_python.ics_obcs import *
+sose_ics(grid_path='grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='initial_conditions/sose_ics.nc', output_dir='initial_conditions/', constant_t=-1.9, constant_s=34.4, split=180)
 ```
-But I have received an error. I'll record this as a setup issue. 
+
 
