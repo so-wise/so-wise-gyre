@@ -2,7 +2,7 @@
 
 ln -s ../build/mitgcmuv .
 ln -s ../input/* .
-ln -s ../input_bathy/bathy_gyre .
-ln -s ../input_bathy/delR .
-ln -s ../input_bathy/delY .
-ln -s ../input_bathy/draft_gyre .
+ln -s ../setup/topo_outputs/bathy_gyre .
+ln -s ../setup/topo_outputs/delR .
+ln -s ../setup/topo_outputs/delY .
+ln -s ../setup/topo_outputs/draft_gyre .
