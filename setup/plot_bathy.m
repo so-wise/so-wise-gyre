@@ -21,8 +21,16 @@ draft = ncread(fid, 'draft');
 omask = ncread(fid, 'omask');
 imask = ncread(fid, 'imask');
 
+% colormap
+% ----- change to the path of your colormap -----
+load('~/Documents/MATLAB/colormaps/cividis.txt')
+
 % make grid
 [x,y] = meshgrid(lon,lat);
+
+% NaN for land points
+bathy(omask==0) = NaN;
+draft(draft==0) = NaN;
 
 %% Make some plots
 
@@ -44,10 +52,20 @@ figure('color','w','position',figpos)
 pcolor(x,y,bathy')
 shading flat
 colorbar
-title('Bathymetry [m]');
+xlabel('Longitude','fontsize',20)
+ylabel('Latitude','fontsize',20)
+title('Bathymetry [m]','fontsize',22);
+colormap(cividis)
+set(gca,'fontsize',20)
+saveas(gcf,'topo_outputs/bathymetry.png','png')
 
 figure('color','w','position',figpos)
 pcolor(x,y,draft')
 shading flat
 colorbar
-title('Ice draft [m]');
+xlabel('Longitude','fontsize',20)
+ylabel('Latitude','fontsize',20)
+title('Ice draft [m]','fontsize',22);
+colormap(flipud(cividis))
+set(gca,'fontsize',20,'ylim',[-85 -65])
+saveas(gcf,'topo_outputs/draft.png','png')
