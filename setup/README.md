@@ -207,7 +207,7 @@ As a start, I will use SOSE initial conditions. For now, let's stick with Kaitli
 
 ```
 from mitgcm_python.ics_obcs import *
-sose_ics(grid_path='grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='setup/initial_conditions/sose_ics.nc', output_dir='setup/initial_conditions/', constant_t=-1.9, constant_s=34.4, split=180)
+sose_ics(grid_path='../grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='setup/initial_conditions/sose_ics.nc', output_dir='setup/initial_conditions/', constant_t=-1.9, constant_s=34.4, split=180)
 ```
 The potential temperature and salinity ones work, but the sea ice one doesn't. Still having a problem with that one. 
 
