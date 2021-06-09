@@ -199,6 +199,29 @@ In this example case, we'll call the new branch `add-codemods`. Once the edits, 
 ```
 git push -u origin «YOUR_NEWBRANCH_NAME»
 ```
+### Compile and run model
+
+Once you have copied over the ARCHER2 build options file, follow these steps:
+```
+cd so-wise-gyre/build/
+
+# select the compiling environment
+module restore PrgEnv-gnu
+module load cray-netcdf-hdf5parallel
+module load cray-hdf5-parallel
+
+# set the following environment variables
+export MITGCM_ROOTDIR=../../../../MITgcm
+export PATH=$MITGCM_ROOTDIR/tools:$PATH
+export MITGCM_OPT=$MITGCM_ROOTDIR/tools/build_options/dev_linux_amd64_gnu_archer2
+
+# make the make file
+../../../tools/genmake2 -mpi -mods ../code/ -optfile $MITGCM_OPT
+make depend
+make
+```
+To run the model, navigate into the run directory, use the `prepare_run` script, and submit to the job scheduler. 
+
 In order to get the grid files, I had to turn most of the packages off. Of course, this produces a lot of warnings, but that's totally fine. I produced the grid files and have saved them on BAS HPC in the `so-wise-gyre` directory. I've also run the function `check_final_grid(grid_path)` on the MITgcm grid files, which returned "everything looks good!" So the grid passes the checks in that function. For now, I have _turned off EXCH2_. I'm okay with this strategy, although I should ask MM about possible drawbacks here. Presumably we don't _have_ to use EXCH2 for a state estimate these days? Hopefully not. 
 
 ## Interpolate initial conditions
