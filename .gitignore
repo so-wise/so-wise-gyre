@@ -1,7 +1,7 @@
 # MITgcm specific
-build
-build_ad
-build_test
+build/*.*
+build_ad/*.*
+build_test/*.*
 grid
 run/*
 run_ad/*
