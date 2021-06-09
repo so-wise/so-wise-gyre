@@ -1,0 +1,1 @@
+This directory will contain the build files and executable for the main configuration
