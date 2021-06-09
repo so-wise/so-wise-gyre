@@ -1,7 +1,7 @@
 # prepare run
 
 # executable
-ln -s ../build_test/mitgcmuv .
+ln -s ../build/mitgcmuv .
 
 # namelist files
 ln -s ../input/* .
