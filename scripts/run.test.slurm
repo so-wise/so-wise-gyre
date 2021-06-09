@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Slurm job options (job-name, compute nodes, job time)
-#SBATCH --job-name=gyre-test
+#SBATCH --job-name=gyre-grid
 #SBATCH --time=0:10:0
 #SBATCH --nodes=2 
 #SBATCH --ntasks=126
 #SBATCH --cpus-per-task=1
 
-# Replace [budget code] below with your project code (e.g. n02)
-#SBATCH --account=n02 
+# Replace [budget code] below with your project code (e.g. n01-SOWISE)
+#SBATCH --account=n01-SOWISE 
 #SBATCH --partition=standard
 #SBATCH --reservation=shortqos
 #SBATCH --qos=short

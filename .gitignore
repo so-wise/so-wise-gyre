@@ -1,4 +1,5 @@
 # MITgcm specific
+build/Makefile
 build/*.*
 build_ad/*.*
 build_test/*.*
