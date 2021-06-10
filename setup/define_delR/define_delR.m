@@ -1,18 +1,32 @@
+%% Definte SO-WISE vertical levels
+% Set 
 
-% 120 depth levels
-Nz = 120;   
+%% Initial setup
 
-% alternatively, 
-delR_gradual(1) = 5.;
+% clean up workspace
+clear 
+close all
+
+% set parameters
+Nz = 100;            % number of depth levels
+delR_top = 10.;     % thickness of uppermost cell
+ddz_dk = 1.03;      % rate of change of cell thickness
+
+%% Define vertical levels
+
+% build vertical grid using gradual increase
+delR_gradual(1) = delR_top; 
 for n=2:Nz
-    delR_gradual(n) = 1.031*delR_gradual(n-1); %#ok<*SAGROW>
+    delR_gradual(n) = ddz_dk*delR_gradual(n-1); %#ok<*SAGROW>
 end
 
 delR_gradual = round(delR_gradual,1);
 
+% print total length for check
 format bank
 disp(delR_gradual')
 sum(delR_gradual)
+disp('Note: max model grid depth must exceed max bathymetry value')
 
 %% Write delR to plain text file and binary file
 
