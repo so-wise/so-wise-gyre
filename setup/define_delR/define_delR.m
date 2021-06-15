@@ -7,10 +7,13 @@
 clear 
 close all
 
+% write to file? (0 = no, 1 = yes)
+writeToFile = 1; 
+
 % set parameters
-Nz = 100;            % number of depth levels
-delR_top = 10.;     % thickness of uppermost cell
-ddz_dk = 1.03;      % rate of change of cell thickness
+Nz = 120;            % number of depth levels
+delR_top = 5.;     % thickness of uppermost cell
+ddz_dk = 1.031;      % rate of change of cell thickness
 
 %% Define vertical levels
 
@@ -30,15 +33,18 @@ disp('Note: max model grid depth must exceed max bathymetry value')
 
 %% Write delR to plain text file and binary file
 
-[fid,msg] = fopen('dz_file.txt','wt');
-assert(fid>=3,msg)
-fprintf(fid,'%3.1f,\n',delR_gradual');
-fclose(fid);
+if writeToFile 
+    % wriet to text file
+    [fid,msg] = fopen('dz_file.txt','wt');
+    assert(fid>=3,msg)
+    fprintf(fid,'%3.1f\n',delR_gradual');
+    fclose(fid);
 
-% write to 64 bit file
-fid = fopen('delR','w','ieee-be');
-fwrite(fid,delR_gradual','float64');
-fclose(fid);
+    % write to 64 bit file
+    fid = fopen('delR','w','ieee-be');
+    fwrite(fid,delR_gradual','float64');
+    fclose(fid);
+end
 
 %% An alternative from Ariane Verdy
 
