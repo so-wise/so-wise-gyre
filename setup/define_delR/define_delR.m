@@ -11,9 +11,9 @@ close all
 writeToFile = 1; 
 
 % set parameters
-Nz = 120;            % number of depth levels
-delR_top = 5.;     % thickness of uppermost cell
-ddz_dk = 1.031;      % rate of change of cell thickness
+Nz = 100;            % number of depth levels
+delR_top = 10.0;     % thickness of uppermost cell
+ddz_dk = 1.03;      % rate of change of cell thickness
 
 %% Define vertical levels
 
