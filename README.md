@@ -51,3 +51,49 @@ TO BE ADDED ONCE AVAILABLE: how to download the initial conditions, surface forc
 ### 4. Documentation
 
 Once we figure out how to use it, we'll set up one of those "readthedocs" things. 
+
+
+### 5. Project Organization
+We assume that this repository is contained within an MITgcm "experiments" directory, like this one:
+```
+MITgcm_sowise_dev/MITgcm/experiments/so-wise-gyre/
+```
+The MITgcm repository is set to ignore the "experiments" directory by changing the `.gitignore` file of the MITgcm repository. That way, we can keep separate repositories for MITgcm and for the specific SO-WISE development. Within `so-wise-gyre`, we assume the following structure:
+```
+├── code            <- MITgcm code modifications for the so-wise-gyre configuration
+├── input           <- Namelists for running MITgcm in the so-wise-gyre configuration
+├── run             <- An example run directory. Contains a script to set up a run
+├── scripts         <- Various helper scripts for compiling, running, checking
+├── setup
+│   ├── define_delR        <- Matlab script for generating vertical grid
+│   │
+│   ├── topo_inputs        <- Links to bathymetry inputs (e.g. GEBCO, bedmap2) (not tracked in repo)
+│   │
+│   ├── topo_outputs       <- Bathymetry and grid files as produced by mitgcm_python
+│   │
+│   ├── initial_conditions <- Initial conditions as produced by mitgcm_python (not tracked in repo)
+|   |
+│   ├── mitgcm_python      <- Needs to be downloaded separately (https://github.com/knaughten/mitgcm_python)
+│   │
+│   ├── plot_bathy.m       <- Some quick bathymetry plots
+│   │
+│   └── README.md          <- Markdown file describing the setup procedure
+|
+├── notebooks           <- Jupyter notebooks. Naming convention is a number (for ordering),
+|   |                     the creator's initials, and a short `-` delimited description, e.g.
+|   |                     `1.0_jqp_initial-data-exploration`.
+│   ├── exploratory    <- Notebooks for initial exploration.
+│   └── reports        <- Polished notebooks for presentations or intermediate results.
+│
+├── report             <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   ├── figures        <- Generated graphics and figures to be used in reporting
+│   └── sections       <- LaTeX sections. The report folder can be linked to your overleaf
+|                         report with github submodules.
+│
+├── requirements       <- Directory containing the requirement files.
+│
+├── .gitignore         <- Indicates which files the git repository can ignore
+├── LICENSE            <- Describes the terms of use
+└── README.md          <- Describes the overall so-wise-gyre configuration
+
+```

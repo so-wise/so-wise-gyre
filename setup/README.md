@@ -21,38 +21,38 @@ The steps below are based on those in Kaitlin Naughten's wiki associated with he
 
 ## Install mitgcm_python
 
-The mitgcm_python package is a toolkit for constructing model setups in MITgcm. On BAS HPC, I first navigated into a suitable directory on the Expose drive. Next, I cloned a fresh copy of MITgcm and mitgcm_python:
+The mitgcm_python package is a toolkit for constructing model setups in MITgcm. On BAS HPC, navigate to a suitable directory on the Expose drive. Next, cloned a fresh copy of MITgcm and mitgcm_python:
 
 ```
 git clone https://github.com/mitgcm/mitgcm
 git clone https://github.com/knaughten/mitgcm_python
 ```
-Next, since I'm using tsch, I use this command to set a required environment variable:
+If you're using tsch, use this command to set a required environment variable:
 
 ```
 setenv PYTHONPATH (path_to_mitgcm)/MITgcm/utils/python/MITgcmutils
 ```
 
-Note that this environment variable is only set for a single terminal session. One could add it to a startup script, if desired. At present, mitgcm_python is written in Python 2, so I had to switch modules. I also loaded NetCDF for I/O:
+Note that this environment variable is only set for a single terminal session. One could add it to a startup script, if desired. At present, mitgcm_python is written in Python 2, so you have to switch modules. You also need to load NetCDF for I/O:
 
 ```
 module swap python/conda3 python/conda-python-2.7.14
 module load netcdf
 ```
 
-Finally, I entered the command `python` and imported the packages:
+Finally, start up ipython by entering `ipython` in the terminal and import the packages:
 
 ```
 import mitgcm_python
 import MITgcmutils
 ```
 
-There were no error messages, which is a good sign. 
+Importing packages gives python access to the code in the listed modules.
 
 ## Establish the grid and bathymetry
 
 ### Define lat-lon points
-Next, we can define the grid using the 'latlon_points' function as follows. Import some specific utilities:
+Next, define the grid using the 'latlon_points' function as follows. You will need to import some specific utilities:
 ```
 from mitgcm_python.make_domain import *
 ```
@@ -76,15 +76,15 @@ Ny = 558 which has the factors [1, 2, 3, 6, 9, 18, 31, 62, 93, 186, 279, 558]
 If you are happy with this, proceed with interp_bedmap2. At some point, choose your tile size based on the factors and update code/SIZE.h.
 Otherwise, tweak the boundaries and try again.
 ```
-We typically want tiles in the 15-30 range, so we may experiment with the following configurations:
+We typically want tiles in the 15-30 grid cell range, which suggests we use some combination of these:
 ```
 Nx = {20, 25, 28}
-Ny = {18, 31}
+Ny = {18, 31},
 ```
-Which puts the number of cores between 360 and 868. On ARCHER2, there are 128 cores per node, and 16 cores per NUMA region. We can ask Mike Mineter for expert advice on how to distribute the tiles across the compute nodes. 
+which puts the number of cores between 360 and 868. On ARCHER2, there are 128 cores per node, and 16 cores per NUMA region. Advice is forthcoming on how to best distribute processes on ARCHER2 (see the eCSE project led by Emma Boland at BAS).
 
 ### Interpolate BEDMAP2 and GEBCO bathymetry
-Next, we'll create the bathymetry file using the interp_bedmap2 tool. For now, we won't include the optional bathymetry corrections or grounded icebergs. These can be added later if needed. First, create a bathymetric input directory and link to the required files:
+Next, we'll create the bathymetry file using the `interp_bedmap2` tool. For now, we won't include the optional bathymetry corrections or grounded icebergs. These can be added later if needed. First, create a bathymetric input directory and link to the required files:
 ```
 mkdir topo_inputs
 cd topo_inputs
@@ -94,7 +94,7 @@ cd ..
 mkdir topo_outputs
 mv delY topo_outputs
 ```
-Next, in python, set some variables, and call `interp_bedmap2`:
+Next, in python, set some variables and call `interp_bedmap2`:
 ```
 topo_dir='topo_inputs'
 nc_outfile='topo_outputs/sowise_gyre_bathy.nc'
@@ -105,7 +105,7 @@ This will make a combined BEDMAP2/GEBCO bathymetry file. Here is some of the out
 The results have been written into topo_outputs/sowise_gyre_bathy.nc
 Take a look at this file and make whatever edits you would like to the mask (eg removing everything west of the peninsula; you can use edit_mask if you like). Then set your vertical layer thicknesses in a plain-text file, one value per line (make sure they clear the deepest bathymetry of 7933.9877905 m), and run remove_grid_problems
 ```
-We shouldn't need to clear any deeper than 6000 m. This will have at least some representation of the South Sandwich Trench, without trying to represent the entirety of it. 
+We shouldn't need to clear any deeper than 6000 m. We don't need to represent the entirety of the South Sandwich Trench.
 
 ### Edit land mask
 We can make some manual edits to the mask at this point. For simplicity, we can fill out everything  north of 45°S west of 70°W. This part of the Pacific Ocean can be ignored for this application (although pay attention to it later; it may cause some problems down the line). In the file `make_domain.py`, I added the following key:
@@ -124,31 +124,34 @@ edit_mask('topo_outputs/sowise_gyre_bathy.nc', 'topo_outputs/sowise_gyre_bathy_e
 The edited mask is stored in `topo_outputs` for future reference. 
 
 ### Choose vertical layer thickness
-At present, this is done outside the `mitgcm_python` repository. Some Matlab code has been included in this `so-wise-setup` repository for defining the vertical grid. The key feature of this grid is the gradual increasing of vertical thickness, as to limit the production of suprious numerical waves that can be generated by large, rapid changes in resolution. In the example code below, the growth in cell thickness is limited by a factor of 1.031, which is an experimentally-determined factor that produces the required total depth, given the selected number of vertical levels. 
-
+At present, this is done outside the `mitgcm_python` repository. Some Matlab code has been included in this `so-wise-gyre/setup` repository for defining the vertical grid. The key feature of this grid is the gradual increasing of vertical thickness, as to limit the production of suprious numerical waves that can be generated by large, rapid changes in resolution. In the example code below, the growth in cell thickness is limited by a factor of 1.031, which is an experimentally-determined factor that produces the required total depth, given the selected number of vertical levels. The code `setup/define_delR` can be used to explore different vertical grids. For example:
 ```
-% Select number of vertical levels
-Nz = 120;   
+% set parameters
+Nz = 100;            % number of depth levels
+delR_top = 10.0;     % thickness of uppermost cell
+ddz_dk = 1.03;      % rate of change of cell thickness
 
-% Define upper cell thickness, generate the rest
-delR_gradual(1) = 5.;
+%% Define vertical levels
+
+% build vertical grid using gradual increase
+delR_gradual(1) = delR_top; 
 for n=2:Nz
-    delR_gradual(n) = 1.031*delR_gradual(n-1); %#ok<*SAGROW>
+    delR_gradual(n) = ddz_dk*delR_gradual(n-1); %#ok<*SAGROW>
 end
 
 delR_gradual = round(delR_gradual,1);
-disp(delR_gradual')
-sum(delR_gradual)
 
 ```
-The sum of these levels is 6129.10 m, which is fine. However, 120 vertical levels is a big number! That's quite a lot, but we do need lots of levels to capture what's going on under the ice shelf cavities. We will have to try it out to see if 120 meets our needs. 
+Note that the sum of these thickness values must exceed the deepest value of the bathymetry. 
+
+Note that 100 vertical levels is a big number. That's quite a lot, but we do need lots of levels to capture what's going on under the ice shelf cavities. We will have to try it out to see if `Nz=100` meets our needs. 
 
 ### Filling, digging, and zapping grid problems
 Next, let's run this command to take care of some ocean/ice grid issues:
 ```
 remove_grid_problems(nc_infile, nc_outfile, dz_file, hFacMin=hFacMin, hFacMinDr=hFacMinDr)
 ```
-Specifically, I ran the following command with explicit paths:
+Specifically, run the following command with explicit paths:
 ```
 remove_grid_problems('topo_outputs/sowise_gyre_bathy_edited.nc','topo_outputs/sowise_gyre_bathy_fixed.nc','topo_outputs/dz_file.txt',hFacMin=0.1, hFacMinDr=20.)
 ```
@@ -170,7 +173,7 @@ Zapping thin ice shelf draft
 ...1 cells to zap
 ```
 ### Write to binary
-Now that I have the bathymetry set up, write out the binary files that include bathymetry and draft. 
+Now that the bathymetry is ready, write out the binary files that include bathymetry and draft. 
 ```
 write_topo_files(nc_file, bathy_file, draft_file)
 ```
@@ -181,7 +184,7 @@ write_topo_files('topo_outputs/sowise_gyre_bathy_fixed.nc', 'topo_outputs/bathy_
 These outputs will be stored as part of this repository, and they will be updated as the configuration(s) of SO-WISE are updated. 
 
 ## Create initial setup in MITgcm
-First, I've cloned the MITgcm repository into an `MITgcm_sowise_dev` directory on ARCHER2 (using the early access account). Ideally, I would like to keep this state estimate machinery working with the latest version of the code. That being said, I'll note the time of cloning, which is 10 February 2021. The steps below detail how to replicate the efforts so far. The SO-WISE development repository will sit under an MITgcm repository. The "experiments" diretory is not tracked as part of the MITgcm repository. It will be kept separate. 
+First, cloned the MITgcm repository into an `MITgcm_sowise_dev` directory on ARCHER2. Ideally, we would like to keep this state estimate machinery working with the latest version of MITgcm for future development purposes. That being said, I'll note the time of initial cloning, which is 10 February 2021. The steps below detail how to replicate the efforts so far. The SO-WISE development repository will sit under an MITgcm repository. The "experiments" diretory is not tracked as part of the MITgcm repository. It will be kept separate. 
 ```
 git clone https://github.com/MITgcm/MITgcm.git
 cd MITgcm
@@ -222,7 +225,7 @@ make
 ```
 To run the model, navigate into the run directory, use the `prepare_run` script, and submit to the job scheduler. 
 
-In order to get the grid files, I had to turn most of the packages off. Of course, this produces a lot of warnings, but that's totally fine. I produced the grid files and have saved them on BAS HPC in the `so-wise-gyre` directory. I've also run the function `check_final_grid(grid_path)` on the MITgcm grid files, which returned "everything looks good!" So the grid passes the checks in that function. For now, I have _turned off EXCH2_. I'm okay with this strategy, although I should ask MM about possible drawbacks here. Presumably we don't _have_ to use EXCH2 for a state estimate these days? Hopefully not. 
+NOTE: In order to get the grid files, I had to turn most of the packages off. Of course, this produces a lot of warnings, but that's totally fine. I produced the grid files and have saved them on BAS HPC in the `so-wise-gyre` directory. I've also run the function `check_final_grid(grid_path)` on the MITgcm grid files, which returned "everything looks good!" So the grid passes the checks in that function. For now, I have _turned off `EXCH2_`. I'm okay with this strategy, although I should ask MM about possible drawbacks here. Presumably we don't _have_ to use EXCH2 for a state estimate these days? Hopefully not. 
 
 ## Interpolate initial conditions
 
@@ -232,5 +235,5 @@ As a start, I will use SOSE initial conditions. For now, let's stick with Kaitli
 from mitgcm_python.ics_obcs import *
 sose_ics(grid_path='../grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='initial_conditions/sose_ics.nc', output_dir='initial_conditions/', constant_t=-1.9, constant_s=34.4, split=180)
 ```
-The potential temperature and salinity ones work, but the sea ice one doesn't. Still having a problem with that one. 
+
 
