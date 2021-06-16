@@ -87,7 +87,7 @@ pcolor(yy,zz,squeeze(nanmean(SALT)))
 shading flat,colorbar
 title('SALT zonal mean (psu)')
 if saveFigs
-    saveas(gcf,[ploc 'theta_zonal.jpg'],'jpg');
+    saveas(gcf,[ploc 'salt_zonal.jpg'],'jpg');
 end
 
 % sea ice 
