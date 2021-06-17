@@ -11,6 +11,7 @@ mitgcmuv*
 # setup (links to BAS HPC data)
 setup/initial_conditions/v*/*.ini 
 setup/initial_conditions/v*/*.nc 
+setup/boundary_conditions/
 setup/mitgcm_python
 setup/topo_inputs
 
