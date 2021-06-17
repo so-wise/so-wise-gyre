@@ -235,5 +235,13 @@ As a start, I will use SOSE initial conditions. For now, let's stick with Kaitli
 from mitgcm_python.ics_obcs import *
 sose_ics(grid_path='../grid/', sose_dir='/data/oceans_input/raw_input_data/SOSE_monthly_climatology/', nc_out='initial_conditions/sose_ics.nc', output_dir='initial_conditions/', constant_t=-1.9, constant_s=34.4, split=180)
 ```
+## Create boundary conditions
+
+```
+# Eastern boundary conditions
+make_obcs('E', grid_path, input_path, output_dir, source='SOSE', use_seaice=True, nc_out='obcs_e.nc', prec=64)
+make_obcs('N', grid_path, input_path, output_dir, source='SOSE', use_seaice=True, nc_out='obcs_n.nc', prec=64)
+make_obcs('W', grid_path, input_path, output_dir, source='SOSE', use_seaice=True, nc_out='obcs_w.nc', prec=64)
+```
 
 
