@@ -19,8 +19,8 @@ saveFigs = 1;
 %% Load data
 
 % set paths
-floc = '../initial_conditions/v0.40_n100/';
-fout = '../initial_conditions/v0.41_n100/';
+floc = '../initial_conditions/v0.50_n100/';
+fout = '../initial_conditions/v0.51_n100/';
 fname = [floc 'sose_ics.nc'];
 ploc = floc; 
 gloc = '../../grid/';
@@ -77,7 +77,7 @@ pcolor(x,y,SIarea)
 shading flat,colorbar
 title('Sea ice area (m/m) [fixed]');
 if saveFigs
-    saveas(gcf,'SIarea_fixed.jpg','jpg')
+    saveas(gcf,[ploc 'SIarea_fixed.jpg'],'jpg')
 end
 
 % sea ice thickness 
@@ -86,7 +86,7 @@ pcolor(x,y,SIheff)
 shading flat,colorbar
 title('Sea ice thickness (m) [fixed]');
 if saveFigs
-    saveas(gcf,'SIheff_fixed.jpg','jpg')
+    saveas(gcf,[ploc 'SIheff_fixed.jpg'],'jpg')
 end
 
 %% Write out corected ICs
