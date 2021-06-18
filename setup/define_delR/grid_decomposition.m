@@ -1,5 +1,5 @@
 %
-% grid decomposition
+% explore different grid decomposition options
 %
 
 Nx = 460;

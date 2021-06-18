@@ -1,10 +1,15 @@
+# add one directory above to path
+import sys
+sys.path.append("..")
+
 # import modules
 import mitgcm_python
 import MITgcmutils
 from mitgcm_python.make_domain import *
 
 # create lon and lat
-lon, lat = latlon_points(-85, 90, -84.2, -35, 0.25, '../topo_outputs/delY')
+#lon, lat = latlon_points(-85, 90, -84.2, -30, 0.25, '../topo_outputs/delY')  # first try (too far north)
+lon, lat = latlon_points(-85, 90, -84.2, -45, 0.25, '../topo_outputs/delY')
 
 # interpolate bathymetry
 topo_dir='../topo_inputs'

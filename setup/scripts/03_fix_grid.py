@@ -1,3 +1,7 @@
+# add one directory above to path
+import sys
+sys.path.append("..")
+
 import mitgcm_python
 import MITgcmutils
 from mitgcm_python.make_domain import *
