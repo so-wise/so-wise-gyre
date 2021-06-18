@@ -3,6 +3,7 @@ build/Makefile
 build/*.*
 build_ad/*.*
 build_test/*.*
+input_files
 grid
 run/*
 run_ad/*
