@@ -12,6 +12,12 @@ ln -s ../setup/topo_outputs/delR .
 ln -s ../setup/topo_outputs/delY .
 ln -s ../setup/topo_outputs/draft_gyre .
 
+# initial conditions
+ln -s ../input_files/*.ini .
+
+# boundary conditions
+ln -s ../input_files/*OBCS* .
+
 # some helpful scripts
 ln -s ../scripts/run.test.slurm .
 ln -s ../scripts/cleanup.sh .
