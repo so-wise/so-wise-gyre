@@ -1,9 +1,9 @@
 # Open-boundaries
  &OBCS_PARM01
  OB_Jnorth=700*-1,
- OB_Ieast=558*-1,
+ OB_Ieast=520*-1,
  OB_Jsouth=700*-1,
- OB_Iwest=558*-1,
+ OB_Iwest=520*-1,
 #useOBCSprescribe=.true.,
 #OBEtFile='THETA_piControl.OBCS_E',
 #OBEsFile='SALT_piControl.OBCS_E',
