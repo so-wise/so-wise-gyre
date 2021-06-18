@@ -11,7 +11,8 @@ addpath ~/matlabfiles/
 addpath ~/matlabfiles/m_map/
 
 % names
-fname = 'sose_ics.nc';
+fname = '../initial_conditions/sose_ics.nc';
+ploc = '../initial_conditions/';
 
 %% Load data --
 
@@ -48,7 +49,7 @@ pcolor(X,Y,T(:,:,1))
 shading flat
 colorbar
 title('Potential temperature (surface)')
-saveas(gcf,'T_k001.jpg','jpg')
+saveas(gcf,[ploc 'T_k001.jpg'],'jpg')
 
 % T
 figure('color','w','visible','off')
@@ -56,7 +57,7 @@ pcolor(X,Y,T(:,:,10))
 shading flat
 colorbar
 title('Potential temperature (k=10)')
-saveas(gcf,'T_k010.jpg','jpg')
+saveas(gcf,[ploc 'T_k010.jpg'],'jpg')
 
 % T
 figure('color','w','visible','off')
@@ -64,7 +65,7 @@ pcolor(X,Y,T(:,:,50))
 shading flat
 colorbar
 title('Potential temperature (k=50)')
-saveas(gcf,'T_k050.jpg','jpg')
+saveas(gcf,[ploc 'T_k050.jpg'],'jpg')
 
 % S
 figure('color','w','visible','off')
@@ -72,7 +73,7 @@ pcolor(X,Y,S(:,:,1))
 shading flat
 colorbar
 title('Salinity (surface)')
-saveas(gcf,'S_k001.jpg','jpg')
+saveas(gcf,[ploc 'S_k001.jpg'],'jpg')
 
 % S
 figure('color','w','visible','off')
@@ -80,7 +81,7 @@ pcolor(X,Y,S(:,:,10))
 shading flat
 colorbar
 title('Salinity (k=10)')
-saveas(gcf,'S_k010.jpg','jpg')
+saveas(gcf,[ploc 'S_k010.jpg'],'jpg')
 
 % S
 figure('color','w','visible','off')
@@ -88,7 +89,7 @@ pcolor(X,Y,S(:,:,50))
 shading flat
 colorbar
 title('Salinity (k=50)')
-saveas(gcf,'S_k050.jpg','jpg')
+saveas(gcf,[ploc 'S_k050.jpg'],'jpg')
 
 % zonal mean
 figure('color','w','visible','off')
@@ -96,7 +97,7 @@ pcolor(YY,ZZ,Tx)
 shading flat
 colorbar
 title('Zonal mean temperature (deg C)')
-saveas(gcf,'T_zonal.jpg','jpg')
+saveas(gcf,[ploc 'T_zonal.jpg'],'jpg')
 
 % zonal mean
 figure('color','w','visible','off')
@@ -104,7 +105,7 @@ pcolor(YY,ZZ,Sx)
 shading flat
 colorbar
 title('Zonal mean salinity (psu)')
-saveas(gcf,'S_zonal.jpg','jpg')
+saveas(gcf,[ploc 'S_zonal.jpg'],'jpg')
 
 % sea ice area
 figure('color','w','visible','off')
@@ -112,7 +113,7 @@ pcolor(X,Y,SIarea)
 shading flat
 colorbar
 title('Sea ice area')
-saveas(gcf,'SIarea.jpg','jpg')
+saveas(gcf,[ploc 'SIarea.jpg'],'jpg')
 
 % sea ice thickness
 figure('color','w','visible','off')
@@ -120,4 +121,4 @@ pcolor(X,Y,SIheff)
 shading flat
 colorbar
 title('Sea ice thickness (m)')
-saveas(gcf,'SIheff.jpg','jpg')
+saveas(gcf,[ploc 'SIheff.jpg'],'jpg')

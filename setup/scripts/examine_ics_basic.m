@@ -18,7 +18,7 @@ saveFigs = 1;
 %% Load data
 
 % set paths
-floc = '../initial_conditions/v0.41_n100/';
+floc = '../initial_conditions/';
 fname = [floc 'sose_ics.nc'];
 ploc = floc; 
 gloc = '../../grid/';

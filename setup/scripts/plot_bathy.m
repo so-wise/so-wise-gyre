@@ -11,7 +11,7 @@ close all
 %% Read the bathymetry files
 
 % set file location
-fid = 'topo_outputs/sowise_gyre_bathy_fixed.nc';
+fid = '../topo_outputs/sowise_gyre_bathy_fixed.nc';
 
 % read in data
 lat = ncread(fid, 'lat');
@@ -23,7 +23,8 @@ imask = ncread(fid, 'imask');
 
 % colormap
 % ----- change to the path of your colormap -----
-load('~/Documents/MATLAB/colormaps/cividis.txt')
+%load('~/Documents/MATLAB/colormaps/cividis.txt')
+load('~/colormaps/cividis.txt')
 
 % make grid
 [x,y] = meshgrid(lon,lat);
@@ -36,19 +37,19 @@ bathy(omask==0) = NaN;
 
 figpos = [236 70 1092 700];
 
-figure('color','w','position',figpos)
+figure('color','w','position',figpos,'visible','off')
 pcolor(x,y,omask')
 shading flat
 colorbar
 title('Ocean mask');
 
-figure('color','w','position',figpos)
+figure('color','w','position',figpos,'visible','off')
 pcolor(x,y,imask')
 shading flat
 colorbar
 title('Ice mask');
 
-figure('color','w','position',figpos)
+figure('color','w','position',figpos,'visible','off')
 pcolor(x,y,bathy')
 shading flat
 colorbar
@@ -57,9 +58,9 @@ ylabel('Latitude','fontsize',20)
 title('Bathymetry [m]','fontsize',22);
 colormap(cividis)
 set(gca,'fontsize',20)
-saveas(gcf,'topo_outputs/bathymetry.png','png')
+saveas(gcf,'../topo_outputs/bathymetry.png','png')
 
-figure('color','w','position',figpos)
+figure('color','w','position',figpos,'visible','off')
 pcolor(x,y,draft')
 shading flat
 colorbar
@@ -69,4 +70,4 @@ title('Ice draft [m]','fontsize',22);
 %colormap(flipud(cividis))
 colormap(bone)
 set(gca,'fontsize',20,'ylim',[-85 -65])
-%saveas(gcf,'topo_outputs/draft.png','png')
+saveas(gcf,'../topo_outputs/draft.png','png')
