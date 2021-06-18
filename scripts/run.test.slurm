@@ -4,7 +4,7 @@
 #SBATCH --job-name=gyre-grid
 #SBATCH --time=0:10:0
 #SBATCH --nodes=2 
-#SBATCH --ntasks=126
+#SBATCH --ntasks=112
 #SBATCH --cpus-per-task=1
 
 # Replace [budget code] below with your project code (e.g. n01-SOWISE)
