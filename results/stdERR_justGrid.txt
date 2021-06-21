@@ -1,0 +1,19 @@
+(PID.TID 0000.0001) ** WARNING ** INI_PARMS: Ignores diffKrT (or Kp,Kz) setting in file "data" with ALLOW_3D_DIFFKR
+(PID.TID 0000.0001) ** Warning ** CAL_READPARMS: ignores "data.cal" file since
+(PID.TID 0000.0001) ** Warning ** CAL_READPARMS: useCAL= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** EXF_READPARMS: ignores "data.exf" file since
+(PID.TID 0000.0001) ** Warning ** EXF_READPARMS: useEXF= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** OBCS_READPARMS: ignores "data.obcs" file since
+(PID.TID 0000.0001) ** Warning ** OBCS_READPARMS: useOBCS= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** GGL90_READPARMS: ignores "data.ggl90" file since
+(PID.TID 0000.0001) ** Warning ** GGL90_READPARMS: useGGL90= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** SHELFICE_READPARMS: ignores "data.shelfice" file since
+(PID.TID 0000.0001) ** Warning ** SHELFICE_READPARMS: useShelfIce= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** SEAICE_READPARMS: ignores "data.seaice" file since
+(PID.TID 0000.0001) ** Warning ** SEAICE_READPARMS: useSEAICE= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** SALT_PLUME_READPARMS: ignores "data.salt_plume" file since
+(PID.TID 0000.0001) ** Warning ** SALT_PLUME_READPARMS: useSALT_PLUME= F (set from "data.pkg")
+(PID.TID 0000.0001) ** Warning ** DIAGNOSTICS_READPARMS: ignores "data.diagnostics" file since
+(PID.TID 0000.0001) ** Warning ** DIAGNOSTICS_READPARMS: useDiagnostics= F (set from "data.pkg")
+(PID.TID 0000.0001) *** ERROR *** CAL_GETDATE: myIter=         1 , myTime=             900.00
+(PID.TID 0000.0001) *** ERROR *** CAL_GETDATE: called too early (cal_setStatus=-1 )

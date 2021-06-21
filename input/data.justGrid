@@ -1,0 +1,140 @@
+# -- This setup can be used to just generate the grid files
+
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+#viscAh=1.E1,
+#viscAhGrid=1.E-1,
+ viscA4=1.E8,
+ diffK4T=1.E8,
+ diffK4S=1.E8,
+ viscAz= 1.e-05,
+ no_slip_sides = .FALSE.,
+ no_slip_bottom = .FALSE.,
+ diffKzT=1.e-5,
+ diffKzS=1.e-5,
+ beta=1.E-11,
+ tAlpha=2.E-4,
+ sBeta =7.4E-4,
+ viscC4Leith=2.0,
+ viscC4Leithd=2.0,
+ viscA4GridMax=1.0,
+ useAreaViscLength=.TRUE.,
+ highOrderVorticity  = .TRUE.,
+ bottomDragQuadratic = 0.002,
+#CMM ##########
+ beta=1.E-11,
+ tAlpha=2.E-4,
+ sBeta =7.4E-4,
+ rhonil=1035.,
+ rhoConstFresh=1000.,
+ gravity=9.81,
+ eosType = 'JMD95Z',
+#when using ggl90
+ ivdc_kappa=10.,
+#
+ implicitDiffusion=.true.,
+ implicitViscosity=.true.,
+ implicitFreeSurface=.true.,
+ convertFW2Salt = -1.,
+ useRealFreshWaterFlux=.FALSE.,
+ useCDscheme=.FALSE.,
+ useSingleCpuIO=.TRUE.,
+ vectorInvariantMomentum=.TRUE.,
+ staggerTimeStep=.TRUE.,
+ multiDimAdvection=.TRUE.,
+ tempAdvScheme=33,
+ saltAdvScheme=33,
+#CMM(
+ tempVertAdvScheme=3,
+ saltVertAdvScheme=3,
+ tempImplVertAdv=.TRUE.,
+ saltImplVertAdv=.TRUE.,
+#CMM)
+ useNHMTerms=.FALSE.,
+# turn on lopped cells
+ hFacMin=0.1,
+ hFacMindz=20.,
+# Set precision of data files
+# If EXF is on, this does not apply to forcing or boundary condition files!
+# See data.exf, with variables exf_iprec and exf_iprec_obcs (both default 32)
+#DJ(
+#readBinaryPrec=32,
+#writeBinaryPrec=32,
+ readBinaryPrec=64,
+ writeBinaryPrec=64,
+#DJ)
+ globalfiles=.FALSE.,
+ rotationPeriod=86164.,
+ debugLevel=5,
+ /
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters = 300,
+ cg2dTargetResidual=1.E-8,
+ /
+
+# Time stepping parameters
+ &PARM03
+ nIter0 =      0,
+ nTimeSteps =  1,
+#nTimeSteps =  3000,
+#nTimeSteps =  87624,
+#nTimeSteps =  175248,
+ deltaTmom   = 900.0,
+ deltaTtracer= 900.0,
+ deltaTClock = 900.0,
+ pickupStrictlyMatch=.FALSE.,
+ dumpInitAndLast=.FALSE.
+ writePickupAtEnd=.FALSE.,
+ pChkptFreq= 0.0,
+ dumpFreq=   0.,
+ taveFreq=   0.,
+#dumpFreq=   31536000.,
+#taveFreq=   31536000.,
+#diagFreq=    2629830.,
+ adjDumpFreq=  0.,
+ monitorFreq= 432000.0,
+ forcing_In_AB = .FALSE.,
+ momDissip_In_AB=.FALSE.,
+#epsAB_CD = 0.25,
+#when using ab2:
+#abEps = 0.1,
+#--
+#when using ab3 (deactivated for now):
+#--
+#doAB_onGtGs=.FALSE.,
+#alph_AB=0.5,
+#beta_AB=0.281105,
+#
+ periodicExternalForcing=.TRUE.,
+ externForcingPeriod=2629800.,
+ externForcingCycle=31557600.,
+#
+ /
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.FALSE.,
+ usingSphericalPolarGrid=.TRUE.,
+ xgOrigin= 275.,
+ ygOrigin= -84.2,
+ dxSpacing= 0.25,
+ delYfile= 'delY'
+ delRfile= 'delR'
+ /
+
+# Input datasets
+ &PARM05
+  bathyFile = 'bathy_gyre',
+# hydrogThetaFile='THETA_SO6_FromSO3i121.bin',
+# hydrogSaltFile='SALT_SO6_FromSO3i121.bin',
+# uVelInitFile='UVEL_SO6_FromSO3i121.bin',
+# vVelInitFile='VVEL_SO6_FromSO3i121.bin',
+# adTapeDir = '/tmp/',
+# mdsioLocalDir = '/tmp/',
+ /

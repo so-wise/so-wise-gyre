@@ -1,5 +1,8 @@
 # prepare run
 
+# will need to make sure that ERA5 is linked
+ln -s ../../../../../ERA5/grib/ ../ERA5
+
 # executable
 ln -s ../build/mitgcmuv .
 

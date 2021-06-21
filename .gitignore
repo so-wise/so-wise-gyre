@@ -16,6 +16,9 @@ setup/boundary_conditions/
 setup/mitgcm_python
 setup/topo_inputs
 
+# setup (links to data on ARCHER2)
+ERA5
+
 # Fortran
 *.f
 *.F
