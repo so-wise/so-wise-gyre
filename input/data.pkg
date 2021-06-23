@@ -1,21 +1,21 @@
 # Packages
  &PACKAGES
 #
- useEXF         = .FALSE.,
- useCAL         = .FALSE.,
+ useEXF         = .TRUE.,
+ useCAL         = .TRUE.,
  usePTRACERS    = .FALSE.,
- useGMRedi      = .FALSE.,
- useGGL90       = .FALSE.,
- useSALT_PlUME  = .FALSE.,
+ useGMRedi      = .TRUE.,
+ useGGL90       = .TRUE.,
+ useSALT_PlUME  = .TRUE.,
  useECCO        = .FALSE.,
 #
  useCTRL        = .FALSE.,
  useOBCS        = .FALSE.,
  useDiagnostics = .FALSE.,
- useSeaice      = .FALSE.,
+ useSeaice      = .TRUE.,
  useShelfIce    = .FALSE.,
 #useFrazil      = .FALSE.,
  usePROFILES    = .FALSE.,
- useSMOOTH      = .FALSE.,
+#useSMOOTH      = .FALSE.,
  /
   

@@ -43,10 +43,9 @@
       SEAICE_drySnowAlb_south  = 0.84
       SEAICE_wetSnowAlb_south  = 0.7 
 
-# BELOW THIS IS MY OWN
-#
-      AreaFile  = 'AREA_init_fromSO3i105v1.data',
-      HeffFile  = 'HEFF_init_fromSO3i105v1.data',
+# Initial conditions
+      AreaFile  = 'SIarea_BSOSE.ini',
+      HeffFile  = 'SIheff_BSOSE.ini',
  /
 
  &SEAICE_PARM02

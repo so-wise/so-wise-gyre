@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Slurm job options (job-name, compute nodes, job time)
-#SBATCH --job-name=gyre-grid
+#SBATCH --job-name=gyre-test
 #SBATCH --time=0:10:0
 #SBATCH --nodes=2 
 #SBATCH --ntasks=112
