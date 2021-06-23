@@ -30,7 +30,8 @@
  rhonil=1035.,
  rhoConstFresh=1000.,
  gravity=9.81,
- eosType = 'JMD95Z',
+ eosType = 'JMD95Z',  
+#eosType = 'MDJWF',  
 #when using ggl90
  ivdc_kappa=10.,
 #
@@ -96,7 +97,7 @@
 #taveFreq=   31536000.,
 #diagFreq=    2629830.,
  adjDumpFreq=  0.,
- monitorFreq= 432000.0,
+ monitorFreq= 900.0,
  forcing_In_AB = .FALSE.,
  momDissip_In_AB=.FALSE.,
 #epsAB_CD = 0.25,
@@ -109,7 +110,7 @@
 #alph_AB=0.5,
 #beta_AB=0.281105,
 #
- periodicExternalForcing=.TRUE.,
+ periodicExternalForcing=.FALSE.,
  externForcingPeriod=2629800.,
  externForcingCycle=31557600.,
 #
@@ -129,10 +130,11 @@
 # Input datasets
  &PARM05
   bathyFile = 'bathy_gyre',
-# hydrogThetaFile='THETA_SO6_FromSO3i121.bin',
-# hydrogSaltFile='SALT_SO6_FromSO3i121.bin',
-# uVelInitFile='UVEL_SO6_FromSO3i121.bin',
-# vVelInitFile='VVEL_SO6_FromSO3i121.bin',
+  hydrogThetaFile = 'THETA_BSOSE.ini',
+  hydrogSaltFile = 'SALT_BSOSE.ini',
+  uVelInitFile = 'UVEL_BSOSE.ini',
+  vVelInitFile = 'VVEL_BSOSE.ini',
+  adTapeDir = 'tapes/',
 # adTapeDir = '/tmp/',
 # mdsioLocalDir = '/tmp/',
  /

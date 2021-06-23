@@ -2,30 +2,43 @@
  &OBCS_PARM01
  OB_Jnorth=700*-1,
  OB_Ieast=520*-1,
- OB_Jsouth=700*-1,
- OB_Iwest=520*-1,
-#useOBCSprescribe=.true.,
-#OBEtFile='THETA_piControl.OBCS_E',
-#OBEsFile='SALT_piControl.OBCS_E',
-#OBEuFile='UVEL_piControl.OBCS_E',
-#OBEvFile='VVEL_piControl.OBCS_E',
-#OBEaFile='SIarea_piControl.OBCS_E',
-#OBEhFile='SIheff_piControl.OBCS_E',
-#OBEsnFile='SIhsnow_piControl.OBCS_E',
-#OBEuiceFile='SIuice_piControl.OBCS_E',
-#OBEviceFile='SIvice_piControl.OBCS_E',
-#OBNtFile='THETA_piControl.OBCS_N',
-#OBNsFile='SALT_piControl.OBCS_N',
-#OBNuFile='UVEL_piControl.OBCS_N',
-#OBNvFile='VVEL_piControl.OBCS_N',
-#OBNaFile='SIarea_piControl.OBCS_N',
-#OBNhFile='SIheff_piControl.OBCS_N',
-#OBNsnFile='SIhsnow_piControl.OBCS_N',
-#OBNuiceFile='SIuice_piControl.OBCS_N',
-#OBNviceFile='SIvice_piControl.OBCS_N',
+#OB_Jsouth=700*-1,
+ OB_Iwest=520*1,
+ useOBCSprescribe=.true.,
+# EAST
+ OBEtFile='THETA_SOSE.OBCS_E',
+ OBEsFile='SALT_SOSE.OBCS_E',
+ OBEuFile='UVEL_SOSE.OBCS_E',
+ OBEvFile='VVEL_SOSE.OBCS_E',
+ OBEaFile='SIarea_SOSE.OBCS_E',
+ OBEhFile='SIheff_SOSE.OBCS_E',
+#OBEsnFile='SIhsnow_SOSE.OBCS_E',
+ OBEuiceFile='SIuice_SOSE.OBCS_E',
+ OBEviceFile='SIvice_SOSE.OBCS_E',
+# NORTH
+ OBNtFile='THETA_SOSE.OBCS_N',
+ OBNsFile='SALT_SOSE.OBCS_N',
+ OBNuFile='UVEL_SOSE.OBCS_N',
+ OBNvFile='VVEL_SOSE.OBCS_N',
+ OBNaFile='SIarea_SOSE.OBCS_N',
+ OBNhFile='SIheff_SOSE.OBCS_N',
+#OBNsnFile='SIhsnow_SOSE.OBCS_N',
+ OBNuiceFile='SIuice_SOSE.OBCS_N',
+ OBNviceFile='SIvice_SOSE.OBCS_N',
+# WEST
+ OBWtFile='THETA_SOSE.OBCS_E',
+ OBWsFile='SALT_SOSE.OBCS_E',
+ OBWuFile='UVEL_SOSE.OBCS_E',
+ OBWvFile='VVEL_SOSE.OBCS_E',
+ OBWaFile='SIarea_SOSE.OBCS_E',
+ OBWhFile='SIheff_SOSE.OBCS_E',
+#OBWsnFile='SIhsnow_SOSE.OBCS_E',
+ OBWuiceFile='SIuice_SOSE.OBCS_E',
+ OBWviceFile='SIvice_SOSE.OBCS_E',
+# PARAMETERS
  useOBCSsponge=.true.,
- useSeaiceSponge=.false.,
- useOBCSbalance=.false.,
+ useSeaiceSponge=.true.,
+ useOBCSbalance=.true.,
  useOBCStides=.false.,
 ############################################################################
 ### Default values for the unset parameters, just here for your information.
@@ -135,16 +148,16 @@
 ### OBCSprintDiags=debugLevel.ge.debLevC,
 ### tidalPeriod=0*tidalComponents,
 ############################################################################
- &
+ /
 
 ### Orlanski parameters
-### &OBCS_PARM02
+ &OBCS_PARM02
 ### CMAX=0.45,
 ### cvelTimeScale=2000.,
 ### CFIX=0.8,
 ### useFixedCEast=.false.,
 ### useFixedCWest=.false.,
-### &
+ /
 
 # Sponge parameters
  &OBCS_PARM03
@@ -164,15 +177,15 @@
 ### Vrelaxobcsbound=0.,
 ### spongeThickness=0,
 ############################################################################
- &
+ /
 
 ### Stevens parameters - unused - need ALLOW_OBCS_STEVENS
-### &OBCS_PARM04
+ &OBCS_PARM04
 ### TrelaxStevens=0.,
 ### SrelaxStevens=0.,
 ### useStevensPhaseVel=.true.,
 ### useStevensAdvection=.true.,
-### &
+ /
 
 ### Sea ice sponge parameters
  &OBCS_PARM05
@@ -188,4 +201,4 @@
 ###  SLrelaxobcsinner=0.,
 ###  SLrelaxobcsbound=0.,
 ######################################
- &
+ /

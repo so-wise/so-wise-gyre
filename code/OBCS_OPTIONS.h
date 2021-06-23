@@ -31,10 +31,10 @@ C This includes hooks to sponge layer treatment of uvel, vvel
 #define ALLOW_OBCS_SPONGE
 
 C Include hooks to sponge layer treatment of pkg/seaice variables
-#undef ALLOW_OBCS_SEAICE_SPONGE
+#define ALLOW_OBCS_SEAICE_SPONGE
 
 C balance barotropic velocity
-#undef ALLOW_OBCS_BALANCE
+#define ALLOW_OBCS_BALANCE
 
 C -- DJ
 C  The five experimental options below are turned off at present. 
