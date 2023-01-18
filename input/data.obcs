@@ -37,8 +37,10 @@
  OBWviceFile='SIvice_SOSE.OBCS_E',
 # PARAMETERS
  useOBCSsponge=.true.,
- useSeaiceSponge=.true.,
- useOBCSbalance=.true.,
+#useSeaiceSponge=.true.,
+ useSeaiceSponge=.false.,
+#useOBCSbalance=.true.,
+ useOBCSbalance=.false.,
  useOBCStides=.false.,
 ############################################################################
 ### Default values for the unset parameters, just here for your information.

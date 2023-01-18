@@ -15,7 +15,7 @@
  /
 #
  &EXF_NML_02
- atempfile         = '../ERA5/ERA5_sowise_tmp2m_degC',
+ atempfile         = '../ERA5/ERA5_sowise_tmp2m_degK',
  aqhfile           = '../ERA5/ERA5_sowise_spfh2m',
  precipfile        = '../ERA5/ERA5_sowise_precip',
  uwindfile         = '../ERA5/ERA5_sowise_u10m',
@@ -76,12 +76,12 @@
  atemp_nlon        = 725,
  atemp_nlat        = 249,
 #
- aqh_lon0        = 269.00D0,
- aqh_lon_inc     =   0.25D0,
- aqh_lat0        = -90.00D0,
- aqh_lat_inc     =   0.25D0,
- aqh_nlon        = 725,
- aqh_nlat        = 249,
+#aqh_lon0        = 269.00D0,
+#aqh_lon_inc     =   0.25D0,
+#aqh_lat0        = -90.00D0,
+#aqh_lat_inc     =   0.25D0,
+#aqh_nlon        = 725,
+#aqh_nlat        = 249,
 #
  apressure_lon0        = 269.00D0,
  apressure_lon_inc     =   0.25D0,

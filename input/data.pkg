@@ -11,7 +11,7 @@
 #
  useCTRL        = .FALSE.,
  useOBCS        = .FALSE.,
- useDiagnostics = .FALSE.,
+ useDiagnostics = .TRUE.,
  useSeaice      = .TRUE.,
  useShelfIce    = .FALSE.,
 #useFrazil      = .FALSE.,

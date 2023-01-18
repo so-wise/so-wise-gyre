@@ -80,7 +80,7 @@
 # Time stepping parameters
  &PARM03
  nIter0 =      0,
- nTimeSteps =  1,
+ nTimeSteps =  2,
 #nTimeSteps =  3000,
 #nTimeSteps =  87624,
 #nTimeSteps =  175248,
@@ -88,7 +88,7 @@
  deltaTtracer= 900.0,
  deltaTClock = 900.0,
  pickupStrictlyMatch=.FALSE.,
- dumpInitAndLast=.FALSE.
+ dumpInitAndLast=.TRUE.
  writePickupAtEnd=.FALSE.,
  pChkptFreq= 0.0,
  dumpFreq=   0.,

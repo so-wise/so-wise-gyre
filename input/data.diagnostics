@@ -14,7 +14,8 @@
 # diag_mnc     = .FALSE.,
 # do not specify levels => all levels are selected
 #---
-   frequency(1) = 2628000.0,
+#  frequency(1) = 2628000.0,
+   frequency(1) = -900.0,
    fields(1,1) = 'THETA   ',
                  'SALT    ',
                  'UVEL    ',
@@ -23,6 +24,27 @@
                  'PHIHYD  ',
                  'DRHODR  ',
    filename(1) = 'diag_state',
+#
+#---
+   frequency(2) = -900.0,
+   fields(1,2) = 'EXFqnet ',
+                 'EXFuwind',
+                 'EXFvwind',
+                 'EXFlwdn ',
+                 'EXFswdn ',
+                 'EXFatemp',
+                 'EXFaqh  ',
+   filename(2) = 'diag_exf',
+#---
+   frequency(3) = -900.0,
+   fields(1,3) = 'oceQnet ',
+                 'oceTAUX ',
+                 'oceTAUY ',
+                 'oceQsw  ',
+                 'oceFWflx',
+                 'oceSflux',
+                 'oceFreez',
+   filename(3) = 'diag_oce',
 #
 #   frequency(2) = 2628000.0,
 #   fields(1,2) = 'TRAC01  ',
