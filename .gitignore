@@ -9,7 +9,12 @@ run/*
 run_ad/*
 mitgcmuv*
 
+# initial conditions files
+*.ini
+
 # setup (links to BAS HPC data)
+setup/initial_conditions/keepSafe/
+setup/initial_conditions/sose_ics.nc
 setup/initial_conditions/*.ini 
 setup/initial_conditions/*.nc 
 setup/boundary_conditions/
