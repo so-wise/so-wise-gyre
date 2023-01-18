@@ -18,8 +18,8 @@ setup/initial_conditions/sose_ics.nc
 setup/initial_conditions/*.ini 
 setup/initial_conditions/*.nc 
 setup/boundary_conditions/
-setup/mitgcm_python
-setup/topo_inputs
+setup/mitgcm_python/
+setup/topo_inputs/
 
 # setup (links to data on ARCHER2)
 ERA5
