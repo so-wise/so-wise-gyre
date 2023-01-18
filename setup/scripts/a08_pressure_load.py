@@ -13,5 +13,6 @@ calc_load_anomaly('../../grid/',
                   ini_temp_file='../initial_conditions/THETA_BSOSE.ini', 
                   ini_salt_file='../initial_conditions/SALT_BSOSE.ini', 
                   constant_t=-1.9, 
-                  constant_s=34.4, 
+                  constant_s=34.4,
+                  eosType='JMD95',
                   rhoConst=1035)
