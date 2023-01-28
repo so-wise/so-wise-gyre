@@ -8,6 +8,7 @@ import MITgcmutils
 from mitgcm_python.ics_obcs import *
 
 # pressure load anomaly
+# --- this seems to be very slow (it took about 2.5 hours on ARCHER2)
 calc_load_anomaly('../../grid/', 
                   '../initial_conditions/pload_gyre', 
                   ini_temp_file='../initial_conditions/THETA_BSOSE.ini', 
