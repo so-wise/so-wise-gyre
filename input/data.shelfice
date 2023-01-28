@@ -3,8 +3,7 @@
 # ===================================
  &SHELFICE_PARM01
  SHELFICEtopoFile='draft_gyre',
-#we are missing the pload_tmp file, can't get it to work
-#SHELFICEloadAnomalyFile='pload_tmp',
+ SHELFICEloadAnomalyFile='pload_gyre',
  no_slip_shelfice= .FALSE.,
  SHELFICEconserve= .TRUE.,
  SHELFICEwriteState= .TRUE.,
