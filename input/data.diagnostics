@@ -15,7 +15,7 @@
 # do not specify levels => all levels are selected
 #---
 #  frequency(1) = 2628000.0,
-   frequency(1) = -900.0,
+   frequency(1) = -100.0,
    fields(1,1) = 'THETA   ',
                  'SALT    ',
                  'UVEL    ',
@@ -26,7 +26,7 @@
    filename(1) = 'diag_state',
 #
 #---
-   frequency(2) = -900.0,
+   frequency(2) = -100.0,
    fields(1,2) = 'EXFqnet ',
                  'EXFuwind',
                  'EXFvwind',
@@ -36,7 +36,7 @@
                  'EXFaqh  ',
    filename(2) = 'diag_exf',
 #---
-   frequency(3) = -900.0,
+   frequency(3) = -100.0,
    fields(1,3) = 'oceQnet ',
                  'oceTAUX ',
                  'oceTAUY ',
@@ -103,7 +103,7 @@
 #                 'BLGLLIM ',
 #  filename(5) = 'diag_bio',
 #
-#   frequency(6) = 2628900.0,
+#   frequency(6) = 2628100.0,
 #   timePhase(6) = 0.0,
 #   fields(1,6)  = 'TRAC01  ',
 #                  'TRAC02  ',

@@ -3,12 +3,12 @@
 # Slurm job options (job-name, compute nodes, job time)
 #SBATCH --job-name=gyre-test
 #SBATCH --time=1:0:0
-#SBATCH --nodes=17
-#SBATCH --tasks-per-node=64
+#SBATCH --nodes=2
+#SBATCH --ntasks=112
 #SBATCH --cpus-per-task=1
 
 # Replace [budget code] below with your project code (e.g. t01)
-#SBATCH --account=n02 
+#SBATCH --account=n01-SOWISE 
 #SBATCH --partition=standard
 #SBATCH --qos=standard
 

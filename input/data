@@ -68,7 +68,7 @@
 #DJ)
  globalfiles=.FALSE.,
  rotationPeriod=86164.,
- debugLevel=5,
+ debugLevel=1,
  /
 
 # Elliptic solver parameters
@@ -84,20 +84,20 @@
 #nTimeSteps =  3000,
 #nTimeSteps =  87624,
 #nTimeSteps =  175248,
- deltaTmom   = 900.0,
- deltaTtracer= 900.0,
- deltaTClock = 900.0,
+ deltaTmom   = 100.0,
+ deltaTtracer= 100.0,
+ deltaTClock = 100.0,
  pickupStrictlyMatch=.FALSE.,
- dumpInitAndLast=.TRUE.
+ dumpInitAndLast=.FALSE.,
  writePickupAtEnd=.FALSE.,
- pChkptFreq= 0.0,
+#pChkptFreq= 0.0,
  dumpFreq=   0.,
  taveFreq=   0.,
 #dumpFreq=   31536000.,
 #taveFreq=   31536000.,
-#diagFreq=    2629830.,
+ diagFreq=    2629830.,
  adjDumpFreq=  0.,
- monitorFreq= 900.0,
+ monitorFreq= 100.0,
  forcing_In_AB = .FALSE.,
  momDissip_In_AB=.FALSE.,
 #epsAB_CD = 0.25,
@@ -120,7 +120,7 @@
  &PARM04
  usingCartesianGrid=.FALSE.,
  usingSphericalPolarGrid=.TRUE.,
- xgOrigin= 275.,
+ xgOrigin= -90.0,
  ygOrigin= -84.2,
  dxSpacing= 0.25,
  delYfile= 'delY'
@@ -130,10 +130,10 @@
 # Input datasets
  &PARM05
   bathyFile = 'bathy_gyre',
-  hydrogThetaFile = 'THETA_BSOSE.ini',
-  hydrogSaltFile = 'SALT_BSOSE.ini',
-  uVelInitFile = 'UVEL_BSOSE.ini',
-  vVelInitFile = 'VVEL_BSOSE.ini',
+# hydrogThetaFile = 'THETA_BSOSE.ini',
+# hydrogSaltFile = 'SALT_BSOSE.ini',
+# uVelInitFile = 'UVEL_BSOSE.ini',
+# vVelInitFile = 'VVEL_BSOSE.ini',
   adTapeDir = 'tapes/',
 # adTapeDir = '/tmp/',
 # mdsioLocalDir = '/tmp/',

@@ -2,7 +2,7 @@
 
 # Slurm job options (job-name, compute nodes, job time)
 #SBATCH --job-name=gyre-test
-#SBATCH --time=0:10:0
+#SBATCH --time=0:20:0
 #SBATCH --nodes=2 
 #SBATCH --ntasks=112
 #SBATCH --cpus-per-task=1
