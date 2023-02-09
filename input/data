@@ -130,10 +130,10 @@
 # Input datasets
  &PARM05
   bathyFile = 'bathy_gyre',
-# hydrogThetaFile = 'THETA_BSOSE.ini',
-# hydrogSaltFile = 'SALT_BSOSE.ini',
-# uVelInitFile = 'UVEL_BSOSE.ini',
-# vVelInitFile = 'VVEL_BSOSE.ini',
+  hydrogThetaFile = 'THETA_BSOSE.ini',
+  hydrogSaltFile = 'SALT_BSOSE.ini',
+  uVelInitFile = 'UVEL_BSOSE.ini',
+  vVelInitFile = 'VVEL_BSOSE.ini',
   adTapeDir = 'tapes/',
 # adTapeDir = '/tmp/',
 # mdsioLocalDir = '/tmp/',
