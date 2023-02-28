@@ -25,37 +25,37 @@
 #runoffFile        = 'runoff_clim921rivers_DJ_so6_ms_V0.bin',
  apressurefile     = '../ERA5/ERA5_sowise_pres',  
 #
- atempstartdate1   = 19920101,
+ atempstartdate1   = 20090101,
  atempstartdate2   = 000000,
  atempperiod       = 21600.0,
 #
- aqhstartdate1     = 19920101,
+ aqhstartdate1     = 20090101,
  aqhstartdate2     = 000000,
  aqhperiod         = 21600.0,
 #
- apressurestartdate1     = 19920101,
+ apressurestartdate1     = 20090101,
  apressurestartdate2     = 000000,
  apressureperiod         = 21600.0,
 #
- precipstartdate1  = 19920101,
+ precipstartdate1  = 20090101,
  precipstartdate2  = 000000,
  precipperiod      = 21600.0,
 #
 #runoffperiod      = -12,
 #
- uwindstartdate1   = 19920101,
+ uwindstartdate1   = 20090101,
  uwindstartdate2   = 000000,
  uwindperiod       = 21600.0,
 #
- vwindstartdate1   = 19920101,
+ vwindstartdate1   = 20090101,
  vwindstartdate2   = 000000,
  vwindperiod       = 21600.0,
 #
- swdownstartdate1  = 19920101,
+ swdownstartdate1  = 20090101,
  swdownstartdate2  = 000000,
  swdownperiod      = 21600.0,
 #
- lwdownstartdate1  = 19920101,
+ lwdownstartdate1  = 20090101,
  lwdownstartdate2  = 000000,
  lwdownperiod      = 21600.0,
  /
